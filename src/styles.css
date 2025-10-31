@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+.app {
+  background: gray;
+  height: 100%;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.app > img {
+  width: 30rem;
+  height: auto;
+}
+
+.app > h1 {
+  margin-top: 0.75rem;
+  font-size: 1.25rem;
+  color: white;
+  text-shadow: 0 0 1px black;
+}
+
+form {
+  margin-top: 4rem;
+}
+
+input {
+  font-size: 1rem;
+
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+
+  line-height: 1.2rem;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+form > button {
+  margin-left: 1rem;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  line-height: 1.2rem;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+form > button:hover,
+.unit-btn:hover {
+  background: skyblue;
+  color: white;
+  cursor: pointer;
+}
+
+.container {
+  min-width: 22%;
+  padding: 1.5rem;
+  display: grid;
+  justify-items: center;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.6),
+    inset 0 8px 20px rgba(255, 255, 255, 0.5); /* inner white */
+}
+
+.container > h1 {
+  font-size: 2.5rem;
+}
+
+.container > div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.container > div > h1 {
+  font-size: 2rem;
+}
+
+.container > div > p {
+  font-size: 1rem;
+}
+.container > div > h1,
+.container > div > img {
+  justify-self: center;
+}
+
+.details {
+  align-self: end;
+}
+
+.unit-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.clear-day {
+  background: linear-gradient(180deg, #56ccf2 0%, #2f80ed 100%);
+}
+
+.clear-night {
+  background: linear-gradient(180deg, #141e30 0%, #243b55 100%);
+}
+
+.partly-cloudy-day {
+  /* background: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%); */
+  background: linear-gradient(180deg, #2488f8 0%, #9bddff 100%);
+}
+
+.partly-cloudy-night {
+  background: linear-gradient(180deg, #141e30 0%, #243b55 100%);
+}
+.cloudy,
+.fog {
+  background: linear-gradient(180deg, #757f9a 0%, #d7dde8 100%);
+}
+
+.hail,
+.rain,
+.sleet,
+.thunderstorm,
+.tornado {
+  background: linear-gradient(180deg, #4b79a1 0%, #283e51 100%);
+}
+
+.snow {
+  background: linear-gradient(180deg, #e0eafc 0%, #cfdef3 100%);
+}
+
+.wind {
+  background: linear-gradient(180deg, #83a4d4 0%, #b6fbff 100%);
+}
