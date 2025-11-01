@@ -8,9 +8,11 @@ const renderPage = () => {
   const input = document.createElement("input");
   const searchBtn = document.createElement("button");
   const container = document.createElement("div");
+  const currentLocationBtn = document.createElement("button");
 
   app.classList.add("app");
   container.classList.add("container");
+  currentLocationBtn.classList.add("current-location-btn");
 
   img.id = "logo";
   img.src = logo;
@@ -18,12 +20,13 @@ const renderPage = () => {
   input.type = "text";
   input.id = "search";
   input.required = true;
+  currentLocationBtn.textContent = ".";
   searchBtn.textContent = "Search Location";
 
-  form.append(input, searchBtn);
+  form.append(input, currentLocationBtn, searchBtn);
   app.append(img, h1, form, container);
 
-  return { app, input, searchBtn };
+  return { app, input, searchBtn, currentLocationBtn };
 };
 
 export { renderPage };

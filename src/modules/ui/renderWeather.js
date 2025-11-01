@@ -14,16 +14,17 @@ export async function renderWeather(pageElements, data) {
   const precipitation = document.createElement("p");
   const humidity = document.createElement("p");
   const unitBtn = document.createElement("button");
-  const currentLocationBtn = document.createElement("button");
 
   const imgName = await findIcon(data.icon);
 
   details.classList.add("details");
   unitBtn.classList.add("unit-btn");
-  currentLocationBtn.classList.add("current-location-btn");
 
   container.innerHTML = "";
-  h1.textContent = pageElements.input.value;
+  h1.textContent =
+    pageElements.input.value === ""
+      ? "Current Location"
+      : pageElements.input.value;
   img.src = imgName;
   temperature.textContent = `${data.temp}°F`;
   conditions.textContent = `${data.conditions}`;
@@ -45,6 +46,8 @@ export async function renderWeather(pageElements, data) {
     unitBtn,
   );
   container.append(h1, details);
+
+  pageElements.input.value = "";
 
   handleUnitToggle(feelslike, temperature, unitBtn, data);
 }
