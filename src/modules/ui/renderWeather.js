@@ -14,11 +14,13 @@ export async function renderWeather(pageElements, data) {
   const precipitation = document.createElement("p");
   const humidity = document.createElement("p");
   const unitBtn = document.createElement("button");
+  const currentLocationBtn = document.createElement("button");
 
   const imgName = await findIcon(data.icon);
 
   details.classList.add("details");
   unitBtn.classList.add("unit-btn");
+  currentLocationBtn.classList.add("current-location-btn");
 
   container.innerHTML = "";
   h1.textContent = pageElements.input.value;
@@ -27,9 +29,7 @@ export async function renderWeather(pageElements, data) {
   conditions.textContent = `${data.conditions}`;
   feelslike.textContent = `Feelslike: ${data.feelslike}°F`;
   precipitation.textContent =
-    data.precip === null
-      ? "Preciplitation: 0"
-      : `Precipitation: ${data.precip}`;
+    data.precip === null ? "Precipitation: 0" : `Precipitation: ${data.precip}`;
   humidity.textContent = `Humidity: ${data.humidity}`;
   unitBtn.textContent = "Toggle Unit";
 

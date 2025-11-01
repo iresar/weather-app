@@ -1,8 +1,8 @@
 export function handleUnitToggle(feelslike, temperature, unitBtn, data) {
-  let celcius = false;
+  let celsius = false;
 
   unitBtn.addEventListener("click", () => {
-    if (!celcius) {
+    if (!celsius) {
       const temp = Math.round((data.temp - 32) * (5 / 9));
       const feels = Math.round((data.feelslike - 32) * (5 / 9));
       temperature.textContent = `${temp}°C`;
@@ -11,6 +11,6 @@ export function handleUnitToggle(feelslike, temperature, unitBtn, data) {
       temperature.textContent = `${data.temp}°F`;
       feelslike.textContent = `Feelslike: ${data.feelslike}°F`;
     }
-    celcius = !celcius;
+    celsius = !celsius;
   });
 }
