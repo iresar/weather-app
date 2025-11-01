@@ -1,13 +1,15 @@
 const fetchData = async (location) => {
   let response;
-  if (location.loc.hasValue) {
+  if (typeof location === "string") {
     response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location.loc.value}?key=5CHPEKNU8KTMB9G69QAME9BRY`,
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=5CHPEKNU8KTMB9G69QAME9BRY`,
     );
-  } else if (location.coords.hasValue) {
+  } else if (typeof location === "object") {
     response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location.coords.latitude},${location.coords.longitude}?key=5CHPEKNU8KTMB9G69QAME9BRY`,
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location.latitude},${location.longitude}?key=5CHPEKNU8KTMB9G69QAME9BRY`,
     );
+  } else {
+    throw new Error("Invalid Input Location");
   }
   const weatherData = await response.json();
   const { conditions, feelslike, humidity, icon, temp, precip } =

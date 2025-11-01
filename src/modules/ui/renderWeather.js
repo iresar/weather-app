@@ -2,7 +2,7 @@ import { setBackground } from "../utils/setBackground.js";
 import { findIcon } from "../utils/findIcon.js";
 import { handleUnitToggle } from "../utils/handleUnitToggle.js";
 
-export async function renderWeather(pageElements, data) {
+export async function renderWeather(pageElements, data, { title }) {
   const app = document.querySelector(".app");
   const container = document.querySelector(".container");
   const h1 = document.createElement("h1");
@@ -21,10 +21,7 @@ export async function renderWeather(pageElements, data) {
   unitBtn.classList.add("unit-btn");
 
   container.innerHTML = "";
-  h1.textContent =
-    pageElements.input.value === ""
-      ? "Current Location"
-      : pageElements.input.value;
+  h1.textContent = title;
   img.src = imgName;
   temperature.textContent = `${data.temp}°F`;
   conditions.textContent = `${data.conditions}`;
